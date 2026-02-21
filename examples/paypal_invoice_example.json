@@ -1,0 +1,7 @@
+{
+  "info": "Test PayPal invoice creation",
+  "invoice": {
+    "invoiceDate": "2026-02-16",
+    "currencyCode": "USD"
+  }
+}
