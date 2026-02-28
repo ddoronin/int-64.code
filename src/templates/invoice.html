@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Invoice Template</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 24px; }
+    .header { display:flex; justify-content:space-between; }
+    table { width:100%; border-collapse: collapse; margin-top: 16px; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { background: #f7f7f7; }
+    .total { text-align: right; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div>
+      <h2>ACME Corp</h2>
+      <div>123 Business Rd</div>
+    </div>
+    <div>
+      <h3>Invoice #{{invoice.id}}</h3>
+      <div>Date: {{invoice.date}}</div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Description</th><th>Qty</th><th>Price</th><th>Amount</th></tr>
+    </thead>
+    <tbody>
+      {{#each invoice.items}}
+        <tr>
+          <td>{{this.description}}</td>
+          <td>{{this.qty}}</td>
+          <td>{{this.price}}</td>
+          <td>{{this.amount}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  <div class="total">Total: ${{invoice.total}}</div>
+</body>
+</html>
